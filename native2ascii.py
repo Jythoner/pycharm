@@ -2,7 +2,7 @@
 """
 转换文件中unicode编码为ascii码表示
 """
-__author__ = '123'
+__author__ = 'erawtfos'
 
 import os
 import re
