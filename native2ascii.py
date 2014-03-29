@@ -23,6 +23,7 @@ def transcoding(file=""):
                 out.write(b"\n")
 
 
+
 def abspath(path="", ExtName=""):
     """
     获取指定目录中完整的文件路径
@@ -30,18 +31,19 @@ def abspath(path="", ExtName=""):
     :param ExtName: 文件扩展名
     :return: 返回完整路径列表
     """
-    list = os.listdir(path.replace("\\", "/"))
+
+    list = os.listdir(path)
     ExtName += "$"
     pathlist = []
     for filename in list:
-        dirs = (path + "/" + filename).replace("//", "/")
-        if re.search(ExtName, dirs):
-            pathlist.append(dirs)
+        paths = os.path.join(path, filename)
+        if re.search(ExtName, paths):
+            pathlist.append(paths)
     return pathlist
 
 
 if __name__ == '__main__':
-    path = "h:/messages" #要转换文件所在文件夹
+    path = r"h:\messages" #要转换文件所在文件夹
     for i in abspath(path, "properties"):
         transcoding(i)
 
