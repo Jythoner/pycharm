@@ -1,4 +1,0 @@
-修改一下native2ascii.py里面的路径，运行后只保留生成的文件之后打包成jar
-
-jar打包命令:
-jar -cvf resources_zh_CN.jar .

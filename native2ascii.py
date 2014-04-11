@@ -7,6 +7,8 @@ __author__ = 'erawtfos'
 import os
 import re
 
+BASE_DIR = os.path.dirname(__file__)
+
 
 def transcoding(file=""):
     """
@@ -23,7 +25,6 @@ def transcoding(file=""):
                 out.write(b"\n")
 
 
-
 def abspath(path="", ExtName=""):
     """
     获取指定目录中完整的文件路径
@@ -33,17 +34,16 @@ def abspath(path="", ExtName=""):
     """
 
     list = os.listdir(path)
-    ExtName += "$"
     pathlist = []
     for filename in list:
-        paths = os.path.join(path, filename)
-        if re.search(ExtName, paths):
-            pathlist.append(paths)
+        curpath = os.path.join(path, filename)
+        if curpath.endswith(ExtName):
+            pathlist.append(curpath)
     return pathlist
 
 
 if __name__ == '__main__':
-    path = r"h:\messages" #要转换文件所在文件夹
-    for i in abspath(path, "properties"):
+    path = os.path.join(BASE_DIR, "messages")  #要转换文件所在文件夹
+    for i in abspath(path, ".properties"):
         transcoding(i)
 
