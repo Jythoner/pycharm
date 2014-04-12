@@ -1,1 +1,3 @@
 messages/*_zh_CN.properties
+*.swp
+log/*.log
