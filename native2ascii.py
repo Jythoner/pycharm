@@ -6,6 +6,7 @@ __author__ = 'erawtfos'
 
 import os
 import re
+import subprocess
 
 BASE_DIR = os.path.dirname(__file__)
 
@@ -43,7 +44,13 @@ def abspath(path="", ExtName=""):
 
 
 if __name__ == '__main__':
-    path = os.path.join(BASE_DIR, "messages")  #要转换文件所在文件夹
+    path = os.path.join(BASE_DIR, "messages")
+    #要转换文件所在文件夹
     for i in abspath(path, ".properties"):
         transcoding(i)
 
+    try:
+        subprocess.call("jar -cvf resources_zh_CN.jar .")
+        #在当前文件夹生成语言包
+    except FileNotFoundError:
+        print("没找到jar命令,把jar.exe路径加入环境变量再运行")
