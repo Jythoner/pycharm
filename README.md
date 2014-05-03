@@ -1,25 +1,58 @@
-PyCharm 汉化项目
-====
+wechat
+==================
 
-生成语言包说明
-----
+An online chat room base on backbonejs &amp; webpy &amp; sqlite3
 
-运行native2ascii.py，运行后只保留生成的文件之后打包成jar
+Css styles Power by `semantic <http://zh.semantic-ui.com/>`_ 
 
-jar打包命令:
-jar -cvf resources_zh_CN.jar .
+Quick Start at local
+-------------------------
+
+::
+
+    git clone https://github.com/the5fire/wechat
+    cd wechat && pip install -r requirements.txt
+    cd src
+    python init_sqlite.py
+    python server.py
+
+then open your browser and type http://127.0.0.1:8080 .
+
+Quick Deploy Online
+------------------------
+You should modify hosts/remote_user or other configration in ``deploy-wechat-simple.yml`` first, then::
+
+    ansible-playbook deploy-wechat-simple.yml
+
+that all.
+
+it's running!!
 
 
-将生成的语言包放到pycharm的lib目录下即可。
+Screenshots
+---------------------
+
+login:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: data/login.png
 
 
+topics:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: data/1.jpg
 
 
+messages:
+~~~~~~~~~~~~~~~~~~~~
 
 .. image:: data/2.jpg
 
 
+TODO:
+------------------------
+
+1. replace gevent-socketio with tornado.
+2. use socketio save message data.
 
