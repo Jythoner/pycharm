@@ -35,19 +35,13 @@ Screenshots
 login:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: data/login.png
+.. image:: data/1.png
 
 
-topics:
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: data/1.jpg
+.. image:: data/2.png
 
-
-messages:
-~~~~~~~~~~~~~~~~~~~~
-
-.. image:: data/2.jpg
 
 
 TODO:
