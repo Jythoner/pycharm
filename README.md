@@ -8,3 +8,6 @@ PyCharm 汉化项目
 
 jar打包命令:
 jar -cvf resources_zh_CN.jar .
+
+
+将生成的语言包放到pycharm的lib目录下即可。
