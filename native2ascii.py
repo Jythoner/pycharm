@@ -53,4 +53,4 @@ if __name__ == '__main__':
         subprocess.call("jar -cvf resources_zh_CN.jar .")
         #在当前文件夹生成语言包
     except FileNotFoundError:
-        print("没找到jar命令,把jar.exe路径加入环境变量再运行")
+        print("没找到jar命令,把jar路径加入环境变量再运行")
